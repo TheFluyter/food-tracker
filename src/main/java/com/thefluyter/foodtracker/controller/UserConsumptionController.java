@@ -18,8 +18,8 @@ public class UserConsumptionController {
     }
 
     @PostMapping
-    public UserConsumption addUserConsumption(@RequestParam Long productId, @RequestParam double quantity) {
-        return foodTrackingService.addUserConsumption(productId, quantity);
+    public UserConsumption addUserConsumption(@RequestParam Long productId, @RequestParam long weightInGrams) {
+        return foodTrackingService.addUserConsumption(productId, weightInGrams);
     }
 
     @GetMapping

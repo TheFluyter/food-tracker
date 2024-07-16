@@ -24,11 +24,11 @@ public class FoodTrackingService {
         return foodItemRepository.findAll();
     }
 
-    public UserConsumption addUserConsumption(Long productId, double quantity) {
-        FoodItem foodItem = foodItemRepository.findById(productId).orElseThrow(() -> new RuntimeException("Product not found"));
+    public UserConsumption addUserConsumption(Long foodItemId, long weightInGrams) {
+        FoodItem foodItem = foodItemRepository.findById(foodItemId).orElseThrow(() -> new RuntimeException("Product not found"));
         UserConsumption consumption = new UserConsumption();
         consumption.setFoodItem(foodItem);
-        consumption.setQuantity(quantity);
+        consumption.setWeightInGrams(weightInGrams);
         consumption.setConsumptionDate(LocalDate.now());
         return userConsumptionRepository.save(consumption);
     }

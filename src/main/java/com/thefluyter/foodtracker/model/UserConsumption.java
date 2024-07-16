@@ -18,6 +18,6 @@ public class UserConsumption {
     @JoinColumn(name = "food_item_id", nullable = false)
     private FoodItem foodItem;
 
-    private double quantity;
+    private long weightInGrams;
     private LocalDate consumptionDate;
 }
